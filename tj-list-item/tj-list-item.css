@@ -1,0 +1,15 @@
+#name::slotted(*) {
+
+}
+
+#image::slotted(*) {
+    width: 100px;
+}
+
+#description::slotted(*) {
+
+}
+
+#price::slotted(*) {
+
+}
