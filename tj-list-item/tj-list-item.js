@@ -1,22 +1,30 @@
-class TJListItem extends HTMLElement {
+(function (window, document, undefined) {
+    const thisDoc = (document._currentScript || document.currentScript).ownerDocument;
 
-  constructor() {
-    super(); // always call super() first in the ctor.
+    class TJListItem extends HTMLElement {
 
-  }
+        constructor() {
+            super();
 
-  connectedCallback() {
+            let shadowRoot = this.attachShadow({mode:'open'});
+            const template = thisDoc.querySelector("template");
+            const instance = template.content.cloneNode(true);
 
-  }
+            shadowRoot.appendChild(instance);
+        }
 
-  disconnectedCallback() {
+        connectedCallback() {
 
-  }
+        }
 
-  attributeChangedCallback(attrName, oldVal, newVal) {
+        disconnectedCallback() {
 
-  }
-}
+        }
 
-customElements.define('tj-list-item', TJListItem);
+        attributeChangedCallback(attrName, oldVal, newVal) {
 
+        }
+    }
+
+    window.customElements.define('tj-list-item', TJListItem);
+})(window, document);

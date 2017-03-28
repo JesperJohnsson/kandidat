@@ -1,7 +1,3 @@
 #title::slotted(*) {
     color: blue;
 }
-
-#content::slotted(*) {
-    color: red;
-}

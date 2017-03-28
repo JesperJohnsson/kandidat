@@ -11,17 +11,30 @@
     <!-- tj-list component -->
     <link rel="import" href="tj-list/tj-list.html">
 
+    <!-- tj-list-item component -->
+    <link rel="import" href="tj-list-item/tj-list-item.html">
+
 </head>
 <body>
     <!-- tj-list component markup -->
     <tj-list>
         <div slot="title">
-            <h1>This is a title</h1>
+            <h1>My favorite candy.</h1>
         </div>
-        <div slot="content">
-            <p>Content outside the component, that is sent into the component.</p>
-            <img src="https://www.w3schools.com/css/trolltunga.jpg">
-        </div>
+
+        <tj-list-item>
+            <div slot="name"><h2>Chocolate</h2></div>
+            <img src="http://media.new.mensxp.com/media/content/2016/Feb/eating-chocolate-daily-is-good-for-health980-1456212647_980x457.jpg" slot="image">
+            <div slot="description">Chocolate is fucking amazing</div>
+            <div slot="price">20Kr</div>
+        </tj-list-item>
+
+        <tj-list-item>
+            <div slot="name"><h2>M&M</h2></div>
+            <img src="https://www.va.se/globalassets/bilder/genrebilder/mm_wikipedia.jpg?width=1100&height=600&mode=crop&" slot="image">
+            <div slot="description">M&M is fucking amazing</div>
+            <div slot="price">15Kr</div>
+        </tj-list-item>
     </tj-list>
 </body>
 </html>
