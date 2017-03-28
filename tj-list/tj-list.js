@@ -1,22 +1,30 @@
-class TJList extends HTMLElement {
+(function (window, document, undefined) {
+    let thatDoc = document;
+    let thisDoc = (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
+    let template = thisDoc.querySelector('template').content;
 
-  constructor() {
-    super(); // always call super() first in the ctor.
+    class TJList extends HTMLElement {
 
-  }
+        constructor() {
+            super();
 
-  connectedCallback() {
+            let shadowRoot = this.attachShadow({mode:'open'});
+            let clone = thatDoc.importNode(template, true);
+            shadowRoot.appendChild(clone);
+        }
 
-  }
+        connectedCallback() {
 
-  disconnectedCallback() {
+        }
 
-  }
+        disconnectedCallback() {
 
-  attributeChangedCallback(attrName, oldVal, newVal) {
+        }
 
-  }
-}
+        attributeChangedCallback(attrName, oldVal, newVal) {
 
-customElements.define('tj-list', TJList);
+        }
+    }
 
+    window.customElements.define('tj-list', TJList);
+})(window, document);
