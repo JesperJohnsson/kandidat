@@ -1,7 +1,5 @@
 (function (window, document, undefined) {
-    let thatDoc = document;
-    let thisDoc = (thatDoc._currentScript || thatDoc.currentScript).ownerDocument;
-    let template = thisDoc.querySelector('template').content;
+    const thisDoc = (document._currentScript || document.currentScript).ownerDocument;
 
     class TJList extends HTMLElement {
 
@@ -9,8 +7,10 @@
             super();
 
             let shadowRoot = this.attachShadow({mode:'open'});
-            let clone = thatDoc.importNode(template, true);
-            shadowRoot.appendChild(clone);
+            const template = thisDoc.querySelector("template");
+            const instance = template.content.cloneNode(true);
+
+            shadowRoot.appendChild(instance);
         }
 
         connectedCallback() {

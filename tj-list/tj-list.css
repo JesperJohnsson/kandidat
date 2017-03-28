@@ -1,11 +1,7 @@
-img {
-    width: 100px;
-}
-
-p {
+#title::slotted(*) {
     color: blue;
 }
 
-h1 {
+#content::slotted(*) {
     color: red;
 }
