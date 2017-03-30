@@ -1,5 +1,21 @@
 <template>
-    <link href="./tj-list-item/tj-list-item.css" rel="stylesheet">
+    <style>
+        #name::slotted(*) {
+
+        }
+
+        #image::slotted(*) {
+            width: 100px;
+        }
+
+        #description::slotted(*) {
+
+        }
+
+        #price::slotted(*) {
+
+        }
+    </style>
     <div class="item">
         <slot name="name" id="name"></slot>
         <slot name="image" id="image"></slot>
